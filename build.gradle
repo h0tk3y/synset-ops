@@ -1,0 +1,30 @@
+group 'com.github.h0tk3y.synsetOps'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = "1.0.3-eap-30"
+    repositories {
+        mavenCentral()
+        maven { url = "https://dl.bintray.com/kotlin/kotlin-eap/" }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url = "https://dl.bintray.com/kotlin/kotlin-eap/" }
+}
+
+apply plugin: 'kotlin'
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.7.4"
+    compile "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.7.4"
+
+    // http://mvnrepository.com/artifact/it.unimi.dsi/fastutil
+    compile 'it.unimi.dsi:fastutil:7.0.12'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+}

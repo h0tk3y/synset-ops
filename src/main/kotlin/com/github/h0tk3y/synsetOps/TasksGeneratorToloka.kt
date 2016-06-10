@@ -10,7 +10,7 @@ fun main(args: Array<String>) {
     with(InputContext) {
         val tasks = makeTasks(pwnClusters, wiktionaryExamples, tolokaReplacement)
 
-        File("tasks.out.tsv").printWriter().use { writer ->
+        File("toloka.tasks.tsv").printWriter().use { writer ->
             writer.println("INPUT:word1\tINPUT:word2\tINPUT:word3\tINPUT:word4\tINPUT:word5\tINPUT:word6\tINPUT:word7\tINPUT:word8\tINPUT:word9\tINPUT:sentence\tINPUT:synsetTag\tGOLDEN:word1\tGOLDEN:word2\tGOLDEN:word3\tGOLDEN:word4\tGOLDEN:word5\tGOLDEN:word6\tGOLDEN:word7\tGOLDEN:word8\tGOLDEN:word9\tHINT:text")
             for (t in tasks) {
                 val wordsUnionParts = t.words

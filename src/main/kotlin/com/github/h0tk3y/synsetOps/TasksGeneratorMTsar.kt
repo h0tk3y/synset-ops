@@ -13,7 +13,7 @@ fun main(args: Array<String>) {
 
         val time = System.currentTimeMillis()
 
-        File("tasks.mtsar.csv").printWriter().use { writer ->
+        File("mtsar.tasks.csv").printWriter().use { writer ->
             for (t in tasks.sortedWith(compareBy({ it.taskId }))) {
 
                 val wordsUnionParts = t.words

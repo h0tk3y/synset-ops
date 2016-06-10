@@ -1,12 +1,12 @@
 package com.github.h0tk3y.synsetOps
 
-import java.io.File
-import java.io.InputStreamReader
-
 data class Synset(val id: Int,
                   val words: Set<String>,
                   val partOfSpeech: String) {
     companion object {
+        /**
+         * @param input synset in CSV format: id,word1;word2;word3,partOfSpeech
+         */
         fun fromCsv(input: String): Synset =
                 input.split(",").let { parts ->
                     Synset(parts[0].toInt(),
@@ -14,9 +14,11 @@ data class Synset(val id: Int,
                            parts[2])
                 }
 
-        fun readList(stream: InputStreamReader): List<Synset> =
-                stream.readLines().drop(1).map { fromCsv(it) }
-
-        fun readList(file: File) = file.inputStream().reader().use { readList(it) }
+        /**
+         * @param input CSV format text including header line, which will be dropped in parsing
+         * @see fromCsv
+         */
+        fun listFromCsv(input: String): List<Synset> =
+                input.lines().drop(1).filter { it.isNotBlank() }.map { fromCsv(it) }
     }
 }

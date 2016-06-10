@@ -2,7 +2,7 @@ group 'com.github.h0tk3y.synsetOps'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = "1.0.3-eap-30"
+    ext.kotlin_version = "1.0.2"
     repositories {
         mavenCentral()
         maven { url = "https://dl.bintray.com/kotlin/kotlin-eap/" }

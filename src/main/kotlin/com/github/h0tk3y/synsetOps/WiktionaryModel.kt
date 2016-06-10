@@ -6,10 +6,6 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 
-/**
- * Created by igushs on 5/31/16.
- */
-
 class Quote(val sentence: String)
 
 class Meaning(
